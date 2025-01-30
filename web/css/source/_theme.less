@@ -1,40 +1,16 @@
-//
-//  Luma theme overrides
-//  _____________________________________________
-
-//  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
-//  Otherwise this theme won't be available for parent nesting
-//  All new variables should be placed in local theme lib or local theme files
-
-
-@theme__color__primary: var(--theme__color__primary, @color-blue1);
-@theme__color__primary-alt: var(--theme__color__primary-alt, @color-blue2);
-@theme__color__secondary: var(--theme__color__secondary, @color-orange-red1);
-
-@footer__background-color: var(--footer-background-color, @color-gray-light01);
-@copyright__background-color: var(--footer-bottom-background-color, @color-gray-light01);
-
-//
-//  Layout
-//  ---------------------------------------------
-
-// Header Panel
-@panel__background-color: @color-gray-light0;
-@border-color__base: @color-gray80;
-
-
-
+@import 'variables/_colours';
 
 //
 //  Typography
 //  ---------------------------------------------
 
+//  Fonts
 @icons__font-path: '@{baseDir}fonts/Luma-Icons';
 @icons__font-name: 'luma-icons';
 
-@font-family__sans-serif: var(--font-family);
-@font-family-name__base: var(--font-family, @font-family__sans-serif);
-
+//  Color nesting
+@panel__background-color: @color-gray-light0;
+@border-color__base: @color-gray80;
 //  Headings
 @h3__font-weight: @font-weight__semibold;
 @h3__margin-top: @indent__base;
@@ -66,14 +42,6 @@
 //  Checkout columns width
 @layout-column-checkout__width-left: 6;
 
-//
-//  Navigation
-//  ---------------------------------------------
-
-@navigation__background: @color-gray94;
-@navigation-level0-item__active__color: @primary__color;
-
-@submenu-item__active__color: @navigation-level0-item__active__color;
 
 //  Desktop navigation
 @navigation-desktop-level0-item__line-height: 47px;
@@ -81,7 +49,6 @@
 @submenu-desktop-item__active__color: @navigation-level0-item__active__color;
 
 //  Tabs
-@tab-control__color: @color-gray43;
 @tab-control__font-weight: @font-weight__regular;
 @tab-control__height: @indent__base*2;
 @tab-control__margin-right: -1px;
@@ -116,27 +83,6 @@
 @accordion-content__margin: 0;
 @accordion-content__padding: @indent__s @indent__s @indent__l;
 
-//
-//  Buttons
-//  ---------------------------------------------
-
-@button__font-weight: @font-weight__semibold;
-
-//  Default = secondary button
-@button__background: @color-gray-darken0;
-@button__border: 1px solid @border-color__base;
-@button__hover__color: @button__color;
-@button__hover__background: darken(@button__background, 5%);
-@button__active__background: @color-gray-darken1;
-
-//  Primary button
-@button-primary__hover__color: @color-white;
-@button-primary__active__background: @link__hover__color;
-@button-primary__active__border: 1px solid @link__hover__color;
-@button-primary__active__color: @color-white;
-
-//  Button with icon
-@button-icon__line-height: @icon-font__line-height;
 
 //
 //  Icons
@@ -256,12 +202,6 @@
 @breadcrumbs__container-margin: 0 0 15px;
 @breadcrumbs-icon__font-size: 10px;
 @breadcrumbs-icon__font-margin: 0 @indent__s;
-
-@breadcrumbs-current__color: @color-gray-middle5;
-@breadcrumbs-link__color: @link__color;
-@breadcrumbs-link__visited__color: @breadcrumbs-link__color;
-@breadcrumbs-link__hover__color: @breadcrumbs-link__color;
-@breadcrumbs-link__active__color: @breadcrumbs-link__color;
 
 //
 //  Popups
