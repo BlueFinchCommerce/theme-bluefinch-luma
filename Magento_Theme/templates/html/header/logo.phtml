@@ -21,7 +21,7 @@ $logoHeight = $logoSizeResolver !== null && $logoSizeResolver->getHeight()
     : $block->getLogoHeight();
 
 $customLogoUrl = $viewModel->getStoreConfig('bluefinch_build/general/logo');
-$imgSrc = $customLogoUrl ?: $block->getLogoSrc();
+$imgSrc = $customLogoUrl ? $viewModel->getMediaUrl($customLogoUrl) : $block->getLogoSrc();
 ?>
 
 <span data-action="toggle-nav" class="action nav-toggle"><span><?= $block->escapeHtml(__('Toggle Nav')) ?></span></span>
