@@ -21,6 +21,8 @@ $logoHeight = $logoSizeResolver !== null && $logoSizeResolver->getHeight()
     : $block->getLogoHeight();
 
 $customLogoUrl = $viewModel->getStoreConfig('bluefinch_build/general/logo');
+$customMobileLogoUrl = $viewModel->getStoreConfig('bluefinch_build/general/mobile_logo');
+
 $imgSrc = $customLogoUrl ? $viewModel->getMediaUrl($customLogoUrl) : $block->getLogoSrc();
 ?>
 
@@ -37,3 +39,18 @@ $imgSrc = $customLogoUrl ? $viewModel->getMediaUrl($customLogoUrl) : $block->get
         <?= $logoHeight ? 'height="' . $block->escapeHtmlAttr($logoHeight) . '"' : '' ?>
     />
 </a>
+
+<?php if ($customMobileLogoUrl): ?>
+    <a
+        class="logo"
+        href="<?= $block->escapeUrl($block->getUrl('')) ?>"
+        title="<?= $block->escapeHtmlAttr($storeName) ?>"
+        aria-label="store logo">
+        <img src="<?= $block->escapeUrl($viewModel->getMediaUrl($customMobileLogoUrl)) ?>"
+             title="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
+             alt="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
+            <?= $logoWidth ? 'width="' . $block->escapeHtmlAttr($logoWidth) . '"' : '' ?>
+            <?= $logoHeight ? 'height="' . $block->escapeHtmlAttr($logoHeight) . '"' : '' ?>
+        />
+    </a>
+<?php endif; ?>
