@@ -23,9 +23,8 @@ $logoHeight = $logoSizeResolver !== null && $logoSizeResolver->getHeight()
 $customLogoUrl = $viewModel->getStoreConfig('bluefinch_build/general/logo');
 $customMobileLogoUrl = $viewModel->getStoreConfig('bluefinch_build/general/mobile_logo');
 
-$imgSrc = $customLogoUrl ? $viewModel->getMediaUrl($customLogoUrl) : $block->getLogoSrc();
+$imgSrc = $customLogoUrl ? $block->getUrl() .'media/' . $customLogoUrl : $block->getLogoSrc();
 ?>
-
 <span data-action="toggle-nav" class="action nav-toggle"><span><?= $block->escapeHtml(__('Toggle Nav')) ?></span></span>
 <a
     class="logo"
@@ -46,7 +45,7 @@ $imgSrc = $customLogoUrl ? $viewModel->getMediaUrl($customLogoUrl) : $block->get
         href="<?= $block->escapeUrl($block->getUrl('')) ?>"
         title="<?= $block->escapeHtmlAttr($storeName) ?>"
         aria-label="store logo">
-        <img src="<?= $block->escapeUrl($viewModel->getMediaUrl($customMobileLogoUrl)) ?>"
+        <img src="<?= $block->escapeUrl($block->getUrl() .'media/' . $customMobileLogoUrl) ?>"
              title="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
              alt="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
             <?= $logoWidth ? 'width="' . $block->escapeHtmlAttr($logoWidth) . '"' : '' ?>
