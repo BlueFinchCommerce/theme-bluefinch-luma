@@ -26,6 +26,7 @@ $customMobileLogoUrl = $viewModel->getStoreConfig('bluefinch_build/general/mobil
 $imgSrc = $customLogoUrl ? $block->getUrl() .'media/' . $customLogoUrl : $block->getLogoSrc();
 ?>
 <span data-action="toggle-nav" class="action nav-toggle"><span><?= $block->escapeHtml(__('Toggle Nav')) ?></span></span>
+
 <a
     class="logo"
     href="<?= $block->escapeUrl($block->getUrl('')) ?>"
@@ -34,22 +35,18 @@ $imgSrc = $customLogoUrl ? $block->getUrl() .'media/' . $customLogoUrl : $block-
     <img src="<?= $block->escapeUrl($imgSrc) ?>"
          title="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
          alt="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
-        <?= $logoWidth ? 'width="' . $block->escapeHtmlAttr($logoWidth) . '"' : '' ?>
-        <?= $logoHeight ? 'height="' . $block->escapeHtmlAttr($logoHeight) . '"' : '' ?>
     />
 </a>
 
 <?php if ($customMobileLogoUrl): ?>
     <a
-        class="logo"
+        class="logo logo--mobile"
         href="<?= $block->escapeUrl($block->getUrl('')) ?>"
         title="<?= $block->escapeHtmlAttr($storeName) ?>"
-        aria-label="store logo">
+        aria-label="mobile store logo">
         <img src="<?= $block->escapeUrl($block->getUrl() .'media/' . $customMobileLogoUrl) ?>"
              title="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
              alt="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
-            <?= $logoWidth ? 'width="' . $block->escapeHtmlAttr($logoWidth) . '"' : '' ?>
-            <?= $logoHeight ? 'height="' . $block->escapeHtmlAttr($logoHeight) . '"' : '' ?>
         />
     </a>
 <?php endif; ?>
