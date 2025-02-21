@@ -1,5 +1,5 @@
 {
-    "name": "bluefinch/theme-bluefinch-luma",
+    "name": "bluefinchcommerce/theme-bluefinch-luma",
     "description": "N/A",
     "require": {
         "php": "~8.1.0|~8.2.0|~8.3.0",
