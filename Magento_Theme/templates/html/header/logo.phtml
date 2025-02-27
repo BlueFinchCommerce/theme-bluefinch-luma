@@ -20,8 +20,8 @@ $logoHeight = $logoSizeResolver !== null && $logoSizeResolver->getHeight()
     ? $logoSizeResolver->getHeight()
     : $block->getLogoHeight();
 
-$customLogoUrl = $viewModel->getStoreConfig('bluefinch_build/general/logo');
-$customMobileLogoUrl = $viewModel->getStoreConfig('bluefinch_build/general/mobile_logo');
+$customLogoUrl = $viewModel ? $viewModel->getStoreConfig('bluefinch_build/general/logo') : null;
+$customMobileLogoUrl = $viewModel ? $viewModel->getStoreConfig('bluefinch_build/general/mobile_logo') : null;
 
 $imgSrc = $customLogoUrl ? $block->getUrl() .'media/' . $customLogoUrl : $block->getLogoSrc();
 ?>

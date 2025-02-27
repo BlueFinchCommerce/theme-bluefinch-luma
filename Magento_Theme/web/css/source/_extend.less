@@ -3,21 +3,23 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-    .logo {
-        display: none;
-
-        img {
-            display: block;
-            max-width: 150px;
-            max-height:75px
-        }
-
-        &--mobile {
-            display: block;
+    .header {
+        .logo {
+            display: none;
 
             img {
-                max-width:100px;
-                max-height:50px
+                display: block;
+                max-width: 150px;
+                max-height:75px
+            }
+
+            &--mobile {
+                display: block;
+
+                img {
+                    max-width:100px;
+                    max-height:50px
+                }
             }
         }
     }
