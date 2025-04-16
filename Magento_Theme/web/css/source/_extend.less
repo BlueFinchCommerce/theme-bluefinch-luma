@@ -5,8 +5,6 @@
 & when (@media-common = true) {
     .header {
         .logo {
-            display: none;
-
             img {
                 display: block;
                 max-width: 150px;
@@ -20,17 +18,21 @@
                     max-width:100px;
                     max-height:50px
                 }
+
+                + .logo {
+                    display: none;
+                }
             }
         }
     }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
-    .header .logo {
-        display: block;
+    .header .logo--mobile {
+        display: none;
 
-        &--mobile {
-            display: none;
+        + .logo {
+            display: block;
         }
     }
 }
