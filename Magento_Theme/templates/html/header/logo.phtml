@@ -23,29 +23,28 @@ $logoHeight = $logoSizeResolver !== null && $logoSizeResolver->getHeight()
 $customLogoUrl = $viewModel ? $viewModel->getStoreConfig('bluefinch_build/general/logo') : null;
 $customMobileLogoUrl = $viewModel ? $viewModel->getStoreConfig('bluefinch_build/general/mobile_logo') : null;
 
-$imgSrc = $customLogoUrl ? $block->getUrl() .'media/' . $customLogoUrl : $block->getLogoSrc();
+$desktopImgSrc = $customLogoUrl ? $block->getUrl() .'media/' . $customLogoUrl : $block->getLogoSrc();
+$mobileImgSrc = $customMobileLogoUrl ? $block->getUrl() .'media/' . $customMobileLogoUrl : $block->getLogoSrc();
 ?>
 <span data-action="toggle-nav" class="action nav-toggle"><span><?= $block->escapeHtml(__('Toggle Nav')) ?></span></span>
 
-<?php if ($customMobileLogoUrl): ?>
-    <a
-        class="logo logo--mobile"
-        href="<?= $block->escapeUrl($block->getUrl('')) ?>"
-        title="<?= $block->escapeHtmlAttr($storeName) ?>"
-        aria-label="mobile store logo">
-        <img src="<?= $block->escapeUrl($block->getUrl() .'media/' . $customMobileLogoUrl) ?>"
-             title="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
-             alt="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
-        />
-    </a>
-<?php endif; ?>
+<a
+    class="logo logo--mobile"
+    href="<?= $block->escapeUrl($block->getUrl('')) ?>"
+    title="<?= $block->escapeHtmlAttr($storeName) ?>"
+    aria-label="mobile store logo">
+    <img src="<?= $block->escapeUrl($mobileImgSrc) ?>"
+            title="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
+            alt="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
+    />
+</a>
 
 <a
     class="logo"
     href="<?= $block->escapeUrl($block->getUrl('')) ?>"
     title="<?= $block->escapeHtmlAttr($storeName) ?>"
     aria-label="store logo">
-    <img src="<?= $block->escapeUrl($imgSrc) ?>"
+    <img src="<?= $block->escapeUrl($desktopImgSrc) ?>"
          title="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
          alt="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
     />
